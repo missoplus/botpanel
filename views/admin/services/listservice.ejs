@@ -1,0 +1,65 @@
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>List Of Services</h3>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav
+                        aria-label="breadcrumb"
+                        class="breadcrumb-header float-start float-lg-end"
+                >
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="home">Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            ServiceList
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-header"></div>
+            <div class="card-body">
+                <table class="table table-striped" id="table1">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+<% if(services.length > 0) { %>
+<% for(let service of services) { %>
+<tr>
+    <th scope="row"><%= service.name %></th>
+    <td>
+        <a href="/panel/services/<%= service._id %>" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
+        <a href="#" onclick="deleteService('<%= service._id %>')" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+    </td>
+</tr>
+<% } %>
+<% } else { %>
+<tr>
+    <td>No data found</td>
+</tr>
+<% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="/panel/services/add" class="btn btn-success">Add New</a>
+    </section>
+</div>
+<script>
+    function deleteService(id){
+        if(confirm('are you sure?')){
+            window.location.href = '/panel/services/delete/'+id;
+        }
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="/static/admin/css/main/app.css" />
+    <link rel="stylesheet" href="/static/admin/css/main/app-dark.css" />
+    <link
+      rel="shortcut icon"
+      href="/static/admin/images/logo/favicon.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="/static/admin/images/logo/favicon.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="/static/admin/css/shared/iconly.css" />
+    <link rel="stylesheet" href="/static/admin/extensions/quill/quill.snow.css" />
+    <link rel="stylesheet" href="/static/admin/extensions/quill/quill.bubble.css" />
+  </head>
+
+  <body>
+    <script src="/static/admin/js/initTheme.js"></script>
+    <div id="app">
+      <%- include('../menu') %>
+      <div id="main">
+        <%- include('../header') %>
+
+        <%- body %>
+
+        <%- include('../footer') %>
+      </div>
+    </div>
+    <script src="/static/admin/js/bootstrap.js"></script>
+    <script src="/static/admin/js/app.js"></script>
+
+    <script src="/static/admin/extensions/quill/quill.min.js"></script>
+    <script src="/static/admin/js/pages/quill.js"></script>
+
+    <!-- Need: Apexcharts -->
+    <script src="/static/admin/extensions/apexcharts/apexcharts.min.js"></script>
+    <script src="/static/admin/js/pages/dashboard.js"></script>
+  </body>
+</html>
